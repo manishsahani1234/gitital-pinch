@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexGen Digital | Premium WordPress Architects</title>
+    <title>Digital Pinch | Premium WordPress Architects</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -13,203 +13,186 @@
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
-        
-        .hero-gradient {
-            background: radial-gradient(circle at 50% 50%, rgba(79, 70, 229, 0.15) 0%, rgba(15, 23, 42, 1) 100%);
-        }
-        
-        .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        
-        .glass-card:hover {
-            background: rgba(255, 255, 255, 0.07);
-            transform: scale(1.05);
-            border-color: #6366f1;
-        }
-        
-        .animated-gradient-text {
-            background: linear-gradient(to right, #6366f1, #a855f7, #ec4899, #6366f1);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradient 3s linear infinite;
-        }
-        
-        @keyframes gradient {
-            0% {
-                background-position: 0% center;
-            }
-            100% {
-                background-position: 200% center;
-            }
-        }
-        
-        .floating {
-            animation: float 3s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-15px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
-        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; overflow-x: hidden; background-color: #0f172a; }
+        .bg-visual-wrapper { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; pointer-events: none; opacity: 0.15; }
+        .floating-element { position: absolute; color: #6366f1; filter: blur(2px); animation: float-complex 20s infinite ease-in-out; }
+        @keyframes float-complex { 0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); } 33% { transform: translate(40px, -60px) rotate(10deg) scale(1.1); } 66% { transform: translate(-30px, 30px) rotate(-10deg) scale(0.9); } }
+        .glass-card { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); }
+        .glass-card:hover { background: rgba(255, 255, 255, 0.08); transform: translateY(-15px); border-color: #6366f1; box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2); }
+        .hero-gradient { background: radial-gradient(circle at 50% 50%, rgba(79, 70, 229, 0.3) 0%, rgba(15, 23, 42, 1) 100%); }
+        .animated-gradient-text { background: linear-gradient(to right, #6366f1, #a855f7, #ec4899, #6366f1); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: gradient 3s linear infinite; }
+        @keyframes gradient { 0% { background-position: 0% center; } 100% { background-position: 200% center; } }
+        .floating { animation: float-simple 4s ease-in-out infinite; }
+        @keyframes float-simple { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        .milestone-num { -webkit-text-stroke: 1px rgba(99, 102, 241, 0.4); color: transparent; font-size: 70px; font-weight: 800; }
+        .btn-glow:hover { box-shadow: 0 0 20px rgba(99, 102, 241, 0.6); transform: scale(1.05); }
     </style>
 </head>
 
-<body class="bg-[#0f172a] text-white">
+<body class="text-white">
+    <div class="bg-visual-wrapper">
+        <i class="fas fa-laptop floating-element text-[180px]" style="top:5%; left:-2%; animation-delay: 0s;"></i>
+        <i class="fas fa-code floating-element text-[110px]" style="top:55%; left:10%; animation-delay: 2s;"></i>
+        <i class="fas fa-terminal floating-element text-[90px]" style="top:25%; right:5%; animation-delay: 4s;"></i>
+        <i class="fas fa-layer-group floating-element text-[150px]" style="bottom:10%; right:15%; animation-delay: 1s;"></i>
+    </div>
 
-    <a href="https://wa.me/917388197123" class="fixed bottom-8 right-8 z-[100] bg-[#25d366] p-4 rounded-full shadow-2xl floating">
+    <a href="https://wa.me/917388197123" class="fixed bottom-6 right-6 z-[100] bg-[#25d366] p-4 rounded-full shadow-2xl floating btn-glow transition-all">
         <i class="fab fa-whatsapp text-3xl"></i>
     </a>
 
-    <nav class="fixed w-full z-50 px-6 py-4">
-        <div class="max-w-7xl mx-auto flex justify-between items-center glass-card px-8 py-3 rounded-2xl">
-            <div class="text-2xl font-extrabold tracking-tighter">DEGITAL<span class="text-indigo-500"> PINCH.</span></div>
+    <nav class="fixed w-full z-50 px-4 md:px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass-card px-5 md:px-8 py-3 rounded-2xl">
+            <div class="text-xl md:text-2xl font-extrabold tracking-tighter">DIGITAL<span class="text-indigo-500"> PINCH.</span></div>
             <div class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-wider">
                 <a href="#process" class="hover:text-indigo-400 transition">Process</a>
-                <a href="#projects" class="hover:text-indigo-400 transition">Works</a>
                 <a href="#pricing" class="hover:text-indigo-400 transition">Pricing</a>
+                <a href="roadmap.html" class="text-indigo-400 font-bold hover:text-white transition italic underline underline-offset-4">Investment Guide</a>
             </div>
-            <a href="https://wa.me/917388197123" target="_blank" rel="noopener" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-xl font-bold text-sm transition-all shadow-lg shadow-indigo-500/20 inline-block">
-    START A PROJECT
-</a>
-
+            <a href="https://wa.me/917388197123" target="_blank" class="bg-indigo-600 text-white px-5 py-2 rounded-xl font-bold text-xs md:text-sm btn-glow transition-all">START</a>
         </div>
     </nav>
 
-    <section class="min-h-screen flex items-center justify-center relative hero-gradient px-6 overflow-hidden">
-        <div class="absolute top-20 left-10 w-64 h-64 bg-indigo-600/20 rounded-full blur-[120px]"></div>
-        <div class="absolute bottom-20 right-10 w-64 h-64 bg-purple-600/20 rounded-full blur-[120px]"></div>
-
-        <div class="text-center relative z-10" data-aos="zoom-in" data-aos-duration="1000">
-            <h1 class="text-5xl md:text-8xl font-extrabold mb-8 tracking-tighter leading-none">
-                We Architect <br> <span class="animated-gradient-text">Digital Futures.</span>
-            </h1>
-            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light">
-                Premium website experiences for brands that refuse to be average. Discover perfection, Deploy excellence.
-            </p>
-            <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
-                <a href="#projects" class="bg-white text-black px-12 py-4 rounded-2xl font-bold hover:scale-105 transition-all w-full md:w-auto text-center">VIEW PORTFOLIO</a>
-                <p class="text-gray-500 font-bold uppercase tracking-widest text-sm">Trusted by 05+ Brands</p>
+    <section class="min-h-screen flex items-center justify-center relative hero-gradient px-6 overflow-hidden pt-20">
+        <div class="text-center relative z-10" data-aos="zoom-out" data-aos-duration="1500">
+            <h1 class="text-5xl md:text-8xl font-extrabold mb-6 tracking-tighter leading-[1.1]">We Architect <br> <span class="animated-gradient-text">Digital Futures.</span></h1>
+            <p class="text-gray-400 text-base md:text-xl max-w-2xl mx-auto mb-12 font-light leading-relaxed">Premium website experiences for brands that refuse to be average. Discover perfection, Deploy excellence.</p>
+            <div class="flex flex-col md:flex-row gap-5 justify-center items-center">
+                <a href="#pricing" class="bg-white text-black px-12 py-4 rounded-2xl font-bold btn-glow transition-all w-full md:w-auto text-center shadow-2xl">VIEW PRICING</a>
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                    <p class="text-gray-500 font-bold uppercase tracking-widest text-[10px]">Trusted by 05+ Brands</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="process" class="py-32 px-6">
+    <section id="process" class="py-24 md:py-32 px-6">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-4xl md:text-6xl font-black mb-20 text-center" data-aos="fade-up">Our Master Plan</h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
                 <div class="glass-card p-10 rounded-3xl" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-indigo-500 text-5xl mb-6 font-black opacity-30 italic">01</div>
+                    <div class="milestone-num mb-4">01</div>
                     <h3 class="text-2xl font-bold mb-4">Discover</h3>
-                    <p class="text-gray-400">Deep diving into your brand's soul to extract goals and audience insights.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Deep diving into your brand's soul to extract goals.</p>
                 </div>
                 <div class="glass-card p-10 rounded-3xl border-t-2 border-indigo-500" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-indigo-500 text-5xl mb-6 font-black opacity-30 italic">02</div>
+                    <div class="milestone-num mb-4">02</div>
                     <h3 class="text-2xl font-bold mb-4">Design</h3>
-                    <p class="text-gray-400">Creating high-end visual prototypes that define your premium presence.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Creating high-end visual prototypes for your brand.</p>
                 </div>
                 <div class="glass-card p-10 rounded-3xl" data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-indigo-500 text-5xl mb-6 font-black opacity-30 italic">03</div>
+                    <div class="milestone-num mb-4">03</div>
                     <h3 class="text-2xl font-bold mb-4">Develop</h3>
-                    <p class="text-gray-400">Turning pixels into high-performance, responsive website code.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Turning pixels into high-performance website code.</p>
                 </div>
                 <div class="glass-card p-10 rounded-3xl" data-aos="fade-up" data-aos-delay="400">
-                    <div class="text-indigo-500 text-5xl mb-6 font-black opacity-30 italic">04</div>
+                    <div class="milestone-num mb-4">04</div>
                     <h3 class="text-2xl font-bold mb-4">Deploy</h3>
-                    <p class="text-gray-400">Launching your vision with 99.9% performance and full support.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Launching your vision with full 24/7 support.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="pricing" class="py-32 px-6 bg-[#0a0f1d]">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20">
-                <h2 class="text-4xl md:text-5xl font-black mb-4">Invest in Quality</h2>
-                <p class="text-gray-400">Choose a plan that fits your ambition.</p>
-            </div>
-
+    <section id="pricing" class="py-24 md:py-32 px-6 bg-[#0a0f1d]/50">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-black mb-16" data-aos="fade-down">Invest in Quality</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="glass-card p-8 rounded-[40px]" data-aos="fade-right">
-                    <p class="text-indigo-400 font-bold mb-4">LITE</p>
-                    <div class="text-5xl font-black mb-8">₹20k <span class="text-sm font-normal text-gray-500">/ project</span></div>
-                    <ul class="space-y-4 mb-10 text-gray-300">
+                    <p class="text-indigo-400 font-bold mb-4 text-xs tracking-[0.3em]">LITE</p>
+                    <div class="text-5xl font-black mb-8">₹20k</div>
+                    <ul class="space-y-4 mb-10 text-gray-400 text-sm text-left">
                         <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> 5 Premium Pages</li>
                         <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Website Setup</li>
                         <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Mobile Friendly</li>
-                        <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Basic Animations</li>
                         <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Contact Form</li>
-                        <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Free SSL & Security</li>
                     </ul>
-                    <button class="w-full py-4 border border-indigo-500 rounded-2xl hover:bg-indigo-600 transition font-bold">GET STARTED</button>
+                    <a href="https://wa.me/917388197123" target="_blank" class="block w-full py-4 border border-indigo-500 rounded-2xl hover:bg-indigo-600 transition font-bold btn-glow text-sm text-center">GET STARTED</a>
                 </div>
-
-                <div class="bg-indigo-600 p-8 rounded-[40px] shadow-2xl shadow-indigo-500/30 scale-105 relative" data-aos="zoom-in">
-                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-white text-indigo-600 px-4 py-1 rounded-full font-bold text-xs">BEST VALUE</div>
-                    <p class="text-white font-bold mb-4">ULTIMATE</p>
+                <div class="bg-indigo-600 p-8 rounded-[40px] shadow-2xl scale-100 md:scale-110 z-10 relative" data-aos="zoom-in">
+                    <p class="text-white/80 font-bold mb-4 text-xs tracking-[0.3em]">ULTIMATE</p>
                     <div class="text-5xl font-black mb-8 text-white">₹35k</div>
-                    <ul class="space-y-4 mb-10 text-indigo-100">
-                        <li><i class="fas fa-check-circle text-white mr-2"></i> 15 Custom Pages</li>
-                        <li><i class="fas fa-check-circle text-white mr-2"></i> Modern UI / UX</li>
-                        <li><i class="fas fa-check-circle text-white mr-2"></i> Advanced SEO</li>
-
-                        <li><i class="fas fa-check-circle text-white mr-2"></i> Priority Support</li>
-                        <li><i class="fas fa-check-circle text-white mr-2"></i> Admin Panel</li>
-                        <li><i class="fas fa-check-circle text-white mr-2"></i> Free SSL & Security</li>
-
+                    <ul class="space-y-4 mb-10 text-indigo-500 text-sm text-left bg-white/10 p-4 rounded-2xl">
+                        <li class="text-white"><i class="fas fa-check-circle text-white mr-2"></i> 15 Custom Pages</li>
+                        <li class="text-white"><i class="fas fa-check-circle text-white mr-2"></i> Advanced SEO</li>
+                        <li class="text-white"><i class="fas fa-check-circle text-white mr-2"></i> Priority Support</li>
                     </ul>
-                    <button class="w-full py-4 bg-white text-indigo-600 rounded-2xl hover:bg-gray-100 transition font-bold">HIRE US NOW</button>
+                    <a href="https://wa.me/917388197123" target="_blank" class="block w-full py-4 bg-white text-indigo-600 rounded-2xl font-black btn-glow text-sm text-center">HIRE US NOW</a>
                 </div>
-
                 <div class="glass-card p-8 rounded-[40px]" data-aos="fade-left">
-                    <p class="text-indigo-400 font-bold mb-4">COMMERCE</p>
+                    <p class="text-indigo-400 font-bold mb-4 text-xs tracking-[0.3em]">COMMERCE</p>
                     <div class="text-5xl font-black mb-8">₹70k</div>
-                    <ul class="space-y-4 mb-10 text-gray-300">
+                    <ul class="space-y-4 mb-10 text-gray-400 text-sm text-left">
                         <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Unlimited Pages</li>
                         <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Payment Gateway</li>
                         <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Custom Dashboards</li>
-                        <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Advanced Security</li>
-                        <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Free Support</li>
                     </ul>
-                    <button class="w-full py-4 border border-indigo-500 rounded-2xl hover:bg-indigo-600 transition font-bold">GET STARTED</button>
+                    <a href="https://wa.me/917388197123" target="_blank" class="block w-full py-4 border border-indigo-500 rounded-2xl hover:bg-indigo-600 transition font-bold btn-glow text-sm text-center">GET STARTED</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-20 text-center border-t border-white/5">
-        <div class="text-3xl font-black mb-6">DIGITAL<span class="text-indigo-500"> PINCH.</span></div>
-        <p class="text-gray-500 max-w-md mx-auto mb-10">Premium Digital Agency based in India. We build websites that don't just exist, but perform.</p>
-        <div class="flex justify-center space-x-6 text-xl text-gray-400 mb-10">
-            <a href="#" class="hover:text-indigo-500"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="hover:text-indigo-500"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="hover:text-indigo-500"><i class="fab fa-twitter"></i></a>
+    <section id="milestones" class="py-24 md:py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-black mb-16 text-center" data-aos="fade-up">Project Roadmap</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 mb-20">
+                <div class="glass-card p-8 rounded-3xl relative overflow-hidden" data-aos="flip-left" data-aos-delay="100">
+                    <div class="milestone-num opacity-10 absolute -right-2 -top-2">01</div>
+                    <h4 class="text-xl font-bold mb-2">Discovery</h4>
+                    <p class="text-gray-400 text-xs mb-6">Strategy & Sitemap setup.</p>
+                    <div class="bg-indigo-500/20 text-indigo-300 px-4 py-1 rounded-full text-[10px] font-bold inline-block">20% Advance</div>
+                </div>
+                <div class="glass-card p-8 rounded-3xl relative overflow-hidden border-t-2 border-indigo-500" data-aos="flip-left" data-aos-delay="200">
+                    <div class="milestone-num opacity-10 absolute -right-2 -top-2">02</div>
+                    <h4 class="text-xl font-bold mb-2">Design</h4>
+                    <p class="text-gray-400 text-xs mb-6">UI/UX Layout approval.</p>
+                    <div class="bg-purple-500/20 text-purple-300 px-4 py-1 rounded-full text-[10px] font-bold inline-block">30% Approval</div>
+                </div>
+                <div class="glass-card p-8 rounded-3xl relative overflow-hidden" data-aos="flip-left" data-aos-delay="300">
+                    <div class="milestone-num opacity-10 absolute -right-2 -top-2">03</div>
+                    <h4 class="text-xl font-bold mb-2">Develop</h4>
+                    <p class="text-gray-400 text-xs mb-6">Coding & Integration.</p>
+                    <div class="bg-blue-500/20 text-blue-300 px-4 py-1 rounded-full text-[10px] font-bold inline-block">30% Build</div>
+                </div>
+                <div class="glass-card p-8 rounded-3xl relative overflow-hidden border-b-2 border-indigo-500" data-aos="flip-left" data-aos-delay="400">
+                    <div class="milestone-num opacity-10 absolute -right-2 -top-2">04</div>
+                    <h4 class="text-xl font-bold mb-2">Deploy</h4>
+                    <p class="text-gray-400 text-xs mb-6">Final Testing & Launch.</p>
+                    <div class="bg-green-500/20 text-green-300 px-4 py-1 rounded-full text-[10px] font-bold inline-block">20% Launch</div>
+                </div>
+            </div>
+
+            <div class="bg-indigo-600 rounded-[40px] p-10 md:p-16 shadow-2xl relative overflow-hidden text-center md:text-left" data-aos="zoom-in-up">
+                <div class="absolute top-0 right-0 p-10 opacity-10"><i class="fas fa-rocket text-[150px]"></i></div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 items-center relative z-10">
+                    <div>
+                        <h5 class="text-3xl md:text-4xl font-black mb-2">15 - 30 Days</h5>
+                        <p class="text-indigo-100 text-sm tracking-widest uppercase font-bold">Total Timeline</p>
+                    </div>
+                    <div>
+                        <h5 class="text-3xl md:text-4xl font-black mb-2">30 Days Free</h5>
+                        <p class="text-indigo-100 text-sm tracking-widest uppercase font-bold">Premium Support</p>
+                    </div>
+                    <a href="https://wa.me/917388197123" target="_blank" class="bg-white text-indigo-600 py-5 rounded-2xl font-black text-sm text-center btn-glow transition-all">CONTACT WHATSAPP</a>
+                </div>
+            </div>
         </div>
-        <p class="text-xs text-gray-600 uppercase tracking-[0.3em]">© 2026 Digital PINCH. All Rights Reserved.</p>
+    </section>
+
+    <footer class="py-16 text-center border-t border-white/5 bg-[#0a0f1d]">
+        <div class="text-2xl font-black mb-6 tracking-tighter text-indigo-500">DIGITAL PINCH.</div>
+        <div class="flex justify-center space-x-8 text-2xl text-gray-500 mb-10">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p class="text-[10px] text-gray-600 uppercase tracking-[0.5em] font-bold">© 2026 DIGITAL PINCH • India • All Rights Reserved</p>
     </footer>
 
     <script>
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
+        AOS.init({ duration: 1000, once: false, mirror: true });
     </script>
 </body>
 
