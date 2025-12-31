@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Guide | Digital Pinch</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0f172a; color: white; scroll-behavior: smooth; }
+        .bg-visual-wrapper { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; pointer-events: none; opacity: 0.12; }
+        .floating-element { position: absolute; color: #6366f1; filter: blur(1px); animation: float-complex 20s infinite ease-in-out; }
+        @keyframes float-complex { 0%, 100% { transform: translate(0, 0) rotate(0deg); } 33% { transform: translate(40px, -60px) rotate(8deg); } 66% { transform: translate(-30px, 30px) rotate(-8deg); } }
+        .glass-bg { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); }
+        .phase-card:hover { background: rgba(255, 255, 255, 0.08); transform: translateY(-10px); border-color: #6366f1; }
+        .gradient-text { background: linear-gradient(to right, #6366f1, #a855f7, #ec4899, #6366f1); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: textGradient 4s linear infinite; }
+        @keyframes textGradient { 0% { background-position: 0% center; } 100% { background-position: 200% center; } }
+        .btn-glow:hover { box-shadow: 0 0 20px rgba(99, 102, 241, 0.6); transform: scale(1.05); }
+    </style>
+</head>
+
+<body>
+    <div class="bg-visual-wrapper">
+        <i class="fas fa-file-invoice-dollar floating-element text-[150px]" style="top:10%; left:5%;"></i>
+        <i class="fas fa-project-diagram floating-element text-[120px]" style="top:60%; right:10%; animation-delay: 2s;"></i>
+        <i class="fas fa-laptop-code floating-element text-[100px]" style="bottom:10%; left:20%; animation-delay: 4s;"></i>
+    </div>
+
+    <nav class="fixed w-full z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass-bg px-8 py-3 rounded-2xl shadow-2xl">
+            <a href="index.html" class="text-2xl font-black tracking-tighter cursor-pointer">DIGITAL<span class="text-indigo-500"> PINCH.</span></a>
+            <button onclick="generatePDF()" class="bg-indigo-600 hover:bg-white hover:text-indigo-600 text-white px-6 py-2 rounded-xl font-bold text-sm transition-all btn-glow shadow-lg">
+                <i class="fas fa-download mr-2"></i> DOWNLOAD PDF
+            </button>
+        </div>
+    </nav>
+
+    <div id="pdf-content">
+        <header class="pt-40 pb-20 px-6 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-7xl font-black mb-6 uppercase tracking-tighter" data-aos="fade-down">Project <span class="gradient-text">Roadmap</span></h1>
+                <p class="text-gray-400 text-lg md:text-xl font-light" data-aos="fade-up">Ek transparent guide aapki website journey ke liye. Kab, kya aur kaise hum aapka project build karenge.</p>
+            </div>
+        </header>
+
+        <section class="py-10 px-6">
+            <div class="max-w-5xl mx-auto space-y-12">
+                <div class="phase-card glass-bg p-8 md:p-12 rounded-[40px] border-l-4 border-indigo-500" data-aos="fade-left">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="text-6xl font-black text-indigo-500 opacity-20">01</div>
+                        <div>
+                            <h2 class="text-2xl md:text-3xl font-bold mb-4 italic">🚀 Phase 1: Discovery & Strategy (Day 1-3)</h2>
+                            <p class="text-gray-400 mb-6 leading-relaxed">Is phase mein hum aapke business goals aur audience ko samajhte hain.</p>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-white/5 p-5 rounded-2xl border border-white/5">
+                                    <h4 class="font-bold text-indigo-400 mb-2 uppercase text-xs tracking-widest">Deliverables:</h4>
+                                    <ul class="text-sm text-gray-300 space-y-2"><li>• Competitor analysis</li><li>• Website Sitemap</li><li>• Design mockup concept</li></ul>
+                                </div>
+                                <div class="bg-indigo-600/20 p-5 rounded-2xl border border-indigo-500/30 text-center">
+                                    <h4 class="font-bold text-white mb-1 uppercase text-xs">Investment:</h4>
+                                    <p class="text-2xl font-black">20% Advance</p>
+                                    <p class="text-[10px] text-indigo-300 uppercase font-bold">Booking Amount</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="phase-card glass-bg p-8 md:p-12 rounded-[40px] border-l-4 border-purple-500" data-aos="fade-right">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="text-6xl font-black text-purple-500 opacity-20">02</div>
+                        <div>
+                            <h2 class="text-2xl md:text-3xl font-bold mb-4 italic">🎨 Phase 2: Design & Visual Identity (Day 4-10)</h2>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-white/5 p-5 rounded-2xl"><ul class="text-sm text-gray-300"><li>• Homepage design</li><li>• Inner layouts</li><li>• Mobile preview</li></ul></div>
+                                <div class="bg-purple-600/20 p-5 rounded-2xl border border-purple-500/30 text-center">
+                                    <p class="text-2xl font-black">30% Payment</p>
+                                    <p class="text-[10px] uppercase font-bold">After Approval</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="phase-card glass-bg p-8 md:p-12 rounded-[40px] border-l-4 border-blue-500" data-aos="fade-left">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="text-6xl font-black text-blue-500 opacity-20">03</div>
+                        <div>
+                            <h2 class="text-2xl md:text-3xl font-bold mb-4 italic">💻 Phase 3: Development (Day 11-20)</h2>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-white/5 p-5 rounded-2xl"><ul class="text-sm text-gray-300"><li>• WordPress setup</li><li>• Speed optimization</li><li>• WhatsApp Tools</li></ul></div>
+                                <div class="bg-blue-600/20 p-5 rounded-2xl border border-blue-500/30 text-center">
+                                    <p class="text-2xl font-black">30% Payment</p>
+                                    <p class="text-[10px] uppercase font-bold">After Build</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="phase-card glass-bg p-8 md:p-12 rounded-[40px] border-l-4 border-green-500" data-aos="fade-right">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="text-6xl font-black text-green-500 opacity-20">04</div>
+                        <div>
+                            <h2 class="text-2xl md:text-3xl font-bold mb-4 italic">🚀 Phase 4: Launch (Day 21-25)</h2>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-white/5 p-5 rounded-2xl"><ul class="text-sm text-gray-300"><li>• Bug testing</li><li>• Training video</li><li>• Deployment</li></ul></div>
+                                <div class="bg-green-600/20 p-5 rounded-2xl border border-green-500/30 text-center">
+                                    <p class="text-2xl font-black">20% Payment</p>
+                                    <p class="text-[10px] uppercase font-bold">Final Handover</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 px-6 bg-[#0a0f1d]/50 text-center">
+            <h2 class="text-4xl font-black mb-16 italic tracking-tighter">💰 Pricing Guide</h2>
+            <div class="max-w-4xl mx-auto glass-bg rounded-[40px] overflow-hidden border border-white/10">
+                <table class="w-full text-left">
+                    <thead class="bg-indigo-600/20 text-indigo-400 uppercase text-[10px] tracking-[0.3em]">
+                        <tr><th class="py-6 px-8">Service</th><th class="py-6 px-8">Price</th><th class="py-6 px-8">Best For</th></tr>
+                    </thead>
+                    <tbody class="text-gray-300 divide-y divide-white/5">
+                        <tr class="hover:bg-white/5 transition"><td class="py-6 px-8">Starter (LITE)</td><td class="py-6 px-8 text-white font-black">₹12,000</td><td class="py-6 px-8">Portfolio/Small Shops</td></tr>
+                        <tr class="bg-white/5"><td class="py-6 px-8">Business (PRO)</td><td class="py-6 px-8 text-white font-black">₹25,000</td><td class="py-6 px-8">Designers/Agencies</td></tr>
+                        <tr><td class="py-6 px-8">E-Commerce</td><td class="py-6 px-8 text-white font-black">₹45,000+</td><td class="py-6 px-8">Retail/Products</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="py-24 px-6">
+            <div class="max-w-5xl mx-auto text-center">
+                <h2 class="text-4xl font-black mb-12 italic">🛠️ Maintenance</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="glass-bg p-10 rounded-[40px] border-b-4 border-indigo-600">
+                        <div class="text-4xl font-black mb-4">₹1,000/mo</div>
+                        <p class="text-gray-400">Basic: Backups + Security Updates</p>
+                    </div>
+                    <div class="glass-bg p-10 rounded-[40px] border-b-4 border-purple-600">
+                        <div class="text-4xl font-black mb-4">₹3,500/mo</div>
+                        <p class="text-gray-400">Growth: SEO + Content Updates</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pb-32 px-6">
+            <div class="max-w-5xl mx-auto bg-white text-black p-12 rounded-[50px] shadow-2xl relative overflow-hidden">
+                <div class="relative z-10 grid md:grid-cols-2 gap-10">
+                    <div>
+                        <h3 class="text-3xl font-black mb-6 uppercase italic">Quick Summary</h3>
+                        <p class="font-bold">⏱️ Timeline: 15-30 Days Avg.</p>
+                        <p class="font-bold">🎧 Support: 30 Days Free Help</p>
+                    </div>
+                    <div class="md:text-right flex flex-col justify-center">
+                        <p class="font-black text-lg mb-6">+91 73881 97123</p>
+                        <a href="https://wa.me/917388197123" class="bg-indigo-600 text-white py-4 px-8 rounded-2xl font-black inline-block shadow-lg">START PROJECT</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        function generatePDF() {
+            const element = document.getElementById('pdf-content');
+            const opt = { margin: 10, filename: 'Digital-Pinch-Guide.pdf', image: { type: 'jpeg', quality: 0.98 }, html2canvas: { scale: 2, backgroundColor: '#0f172a' }, jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' } };
+            html2pdf().set(opt).from(element).save();
+        }
+    </script>
+</body>
+
+</html>
